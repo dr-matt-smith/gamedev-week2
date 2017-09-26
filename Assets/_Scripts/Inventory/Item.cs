@@ -1,7 +1,7 @@
 ﻿namespace Inventory
 {
-	public class Item 
-	{
+    public class Item
+    {
         private ItemType itemType;
 
         public ItemType GetItemType()

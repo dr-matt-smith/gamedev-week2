@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 
-namespace Inventory 
+namespace Inventory
 {
-	public class Inventory : IInventory
-	{
+    public class Inventory : IInventory
+    {
 
         public const int DEFAULT_CAPACITY = 10;
 
-		private Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item>();
+        private Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item>();
         private int capacity = DEFAULT_CAPACITY;
 
         public Item GetItem(ItemType type)
         {
-            if(!items.ContainsKey(type))
+            if (!items.ContainsKey(type))
             {
                 return null;
             }
@@ -21,7 +21,7 @@ namespace Inventory
 
         public bool AddItem(Item item)
         {
-            if(IsFull() || items.ContainsKey(item.GetItemType()))
+            if (IsFull() || items.ContainsKey(item.GetItemType()))
             {
                 return false;
             }
@@ -31,7 +31,7 @@ namespace Inventory
 
         public bool RemoveItem(ItemType type)
         {
-            if(!items.ContainsKey(type))
+            if (!items.ContainsKey(type))
             {
                 return false;
             }
@@ -44,15 +44,15 @@ namespace Inventory
             return RemoveItem(item.GetItemType());
         }
 
-		public bool IsEmpty()
-		{
-			return items.Count == 0;
-		}
+        public bool IsEmpty()
+        {
+            return items.Count == 0;
+        }
 
-		public bool IsFull()
-		{
-			return items.Count == capacity;
-		}
+        public bool IsFull()
+        {
+            return items.Count == capacity;
+        }
 
         public int GetCapacity()
         {
@@ -73,5 +73,5 @@ namespace Inventory
         {
             // TODO
         }
-	}
+    }
 }

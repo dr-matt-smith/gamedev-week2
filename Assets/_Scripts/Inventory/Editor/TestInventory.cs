@@ -1,19 +1,19 @@
 ﻿using NUnit.Framework;
 
-namespace Inventory 
+namespace Inventory
 {
-	[TestFixture]
-	internal class TestInventory 
-	{
-		[Test]
-		public void IsEmptyReturnsTrueWithNewInventory()
-		{
-			Inventory inventory = new Inventory();
+    [TestFixture]
+    internal class TestInventory
+    {
+        [Test]
+        public void IsEmptyReturnsTrueWithNewInventory()
+        {
+            Inventory inventory = new Inventory();
 
-			bool isEmpty = inventory.IsEmpty();
+            bool isEmpty = inventory.IsEmpty();
 
             Assert.IsTrue(isEmpty);
-		}
+        }
 
         [Test]
         public void IsEmptyReturnsFalseWithFullInventory()
@@ -29,15 +29,15 @@ namespace Inventory
             Assert.IsFalse(isEmpty);
         }
 
-		[Test]
-		public void IsFullReturnsFalseWithNewInventory()
-		{
-			Inventory inventory = new Inventory();
+        [Test]
+        public void IsFullReturnsFalseWithNewInventory()
+        {
+            Inventory inventory = new Inventory();
 
-			bool isFull = inventory.IsFull();
+            bool isFull = inventory.IsFull();
 
-			Assert.IsFalse(isFull);
-		}
+            Assert.IsFalse(isFull);
+        }
 
         [Test]
         public void IsFullReturnsTrueWithFullInventory()
@@ -52,5 +52,5 @@ namespace Inventory
 
             Assert.IsTrue(isFull);
         }
-	}
+    }
 }
